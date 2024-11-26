@@ -2,9 +2,9 @@ name: Build and Publish pg_featureserv Docker Image
 
 on:
     push:
-        branches: ["usace-patched"]
+        branches: ["main"]
     pull_request:
-        branches: ["usace-patched"]
+        branches: ["main"]
     workflow_dispatch:
 
 jobs:
