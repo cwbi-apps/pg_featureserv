@@ -10,9 +10,9 @@
 ##      IMAGE_TAG - The tag to be applied to the container
 
 APPVERSION ?= latest
-GOVERSION ?= 1.21.6
+GOVERSION ?= 1.23
 PROGRAM ?= pg_featureserv
-CONTAINER ?= pramsey/$(PROGRAM)
+CONTAINER ?= usace/$(PROGRAM)
 DATE ?= $(shell date +%Y%m%d)
 BASE_REGISTRY ?= registry.access.redhat.com
 BASE_IMAGE ?= ubi8-micro
@@ -54,7 +54,7 @@ docs:   ##               Generate docs
 
 build: $(PROGRAM)  ##              Build a local binary using APPVERSION parameter or CI as default
 
-$(PROGRAM): $(GOFILES) 
+$(PROGRAM): $(GOFILES)
 	go build -v -ldflags "-s -w -X github.com/CrunchyData/pg_featureserv/conf.setVersion=$(APPVERSION)"
 
 bin-for-docker: $(GOFILES)  ##     Build a local binary using APPVERSION parameter or CI as default (to be used in docker image)

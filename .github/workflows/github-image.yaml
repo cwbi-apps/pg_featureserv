@@ -1,0 +1,30 @@
+name: Build and Publish pg_featureserv Docker Image
+
+on:
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step 1: Checkout code
+            - name: "Checkout GitHub Action"
+              uses: actions/checkout@v3
+
+            - name: "Login to GitHub Container Registry"
+              uses: docker/login-action@v1
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+            - name: Build the Docker image
+              run: |
+                  make APPVERSION=1.3.1 TARGETARCH=amd64 clean multi-stage-docker
+                  docker tag usace/pg_featureserve:1.3.1-amd64 usace/pg_featureserve:latest
+                  docker push ghcr.io/${{ github.repository }}/pg_featureserve:1.3.1-amd64
+                  docker push ghcr.io/${{ github.repository }}/pg_featureserv:latest
