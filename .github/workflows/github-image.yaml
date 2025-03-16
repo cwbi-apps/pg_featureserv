@@ -3,9 +3,9 @@ name: Build and Publish pg_featureserv Docker Image
 on:
     push:
         branches: ["master"] # Runs on direct push to master branch
-    pull_request:
-        branches: ["master"]
-        types: [closed] # Runs only when a PR to master is closed
+    # pull_request:
+    #     branches: ["master"]
+    #     types: [closed] # Runs only when a PR to master is closed
     workflow_dispatch:
 
 jobs:
