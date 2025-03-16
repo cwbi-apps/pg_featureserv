@@ -10,7 +10,7 @@
 ##      IMAGE_TAG - The tag to be applied to the container
 
 APPVERSION ?= latest
-GOVERSION ?= 1.23
+GOVERSION ?= 1.24.1
 PROGRAM ?= pg_featureserv
 CONTAINER ?= usace/$(PROGRAM)
 DATE ?= $(shell date +%Y%m%d)
