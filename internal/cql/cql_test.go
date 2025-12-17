@@ -1,7 +1,7 @@
 package cql
 
 /*
- Copyright 2019 - 2024 Crunchy Data Solutions, Inc.
+ Copyright 2019 - 2025 Crunchy Data Solutions, Inc.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -87,6 +87,12 @@ func TestArithmetic(t *testing.T) {
 	checkCQL(t, "p BETWEEN 2 * (1 + 1000000) AND 900000", "\"p\" BETWEEN 2 * (1 + 1000000) AND 900000")
 
 	checkCQL(t, "p = 'a' || x || 'b'", "\"p\" = 'a' || \"x\" || 'b'")
+}
+
+func TestPropertyName(t *testing.T) {
+	checkCQL(t, `"ns:Prop_Name$" = 1`, `"ns:Prop_Name$" = 1`)
+	checkCQL(t, `"eo:grid" = 'MGRS-01GBQ'`, `"eo:grid" = 'MGRS-01GBQ'`)
+	checkCQL(t, `"s2:datatake_id" = 'S2C'`, `"s2:datatake_id" = 'S2C'`)
 }
 
 func TestLiteral(t *testing.T) {

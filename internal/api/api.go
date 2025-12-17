@@ -1,7 +1,7 @@
 package api
 
 /*
- Copyright 2019 - 2024 Crunchy Data Solutions, Inc.
+ Copyright 2019 - 2025 Crunchy Data Solutions, Inc.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -195,7 +195,7 @@ var ParameterSchema openapi3.Schema = openapi3.Schema{
 // Bbox for extent
 type Bbox struct {
 	Crs    string    `json:"crs"`
-	Extent []float64 `json:"bbox"`
+	Extent [][]float64 `json:"bbox"`
 }
 
 // Extent OAPIF Extent structure (partial)
@@ -490,7 +490,7 @@ func toBbox(cc *data.Table) *Bbox {
 	crs := "http://www.opengis.net/def/crs/EPSG/0/4326"
 	return &Bbox{
 		Crs:    crs,
-		Extent: []float64{cc.Extent.Minx, cc.Extent.Miny, cc.Extent.Maxx, cc.Extent.Maxy},
+		Extent: [][]float64{{cc.Extent.Minx, cc.Extent.Miny, cc.Extent.Maxx, cc.Extent.Maxy}},
 	}
 }
 

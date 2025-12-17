@@ -1,7 +1,7 @@
 package conf
 
 /*
- Copyright 2019 - 2024 Crunchy Data Solutions, Inc.
+ Copyright 2019 - 2025 Crunchy Data Solutions, Inc.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -51,7 +51,7 @@ func setDefaultConfig() {
 	viper.SetDefault("Metadata.Title", "pg-featureserv")
 	viper.SetDefault("Metadata.Description", "Crunchy Data Feature Server for PostGIS")
 
-	viper.SetDefault("Website.BasemapUrl", "")
+	viper.SetDefault("Website.BasemapUrl", "https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png")
 }
 
 // Config for system
@@ -179,4 +179,5 @@ func DumpConfig() {
 	log.Debugf("  TableIncludes = %v", Configuration.Database.TableIncludes)
 	log.Debugf("  TableExcludes = %v", Configuration.Database.TableExcludes)
 	log.Debugf("  FunctionIncludes = %v", Configuration.Database.FunctionIncludes)
+	log.Debugf("  TransformFunctions = %v", Configuration.Server.TransformFunctions)
 }

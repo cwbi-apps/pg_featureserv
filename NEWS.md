@@ -3,10 +3,14 @@
 ## Version ??
 *Released: TBD*
 
+### Improvements
+
+* Allow colons in property names
+
 ### Bug Fixes
 
 * Fix CQL parser to allow multiple AND/OR terms (#162)
-
+* Fix collection JSON output to use nested extent bbox as per spec (#175)
 
 ## Version 1.3.1
 *Released: 2024 Feb 6*
