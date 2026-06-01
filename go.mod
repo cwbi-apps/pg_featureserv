@@ -1,6 +1,6 @@
 module github.com/CrunchyData/pg_featureserv
 
-go 1.24.1
+go 1.26.3
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220209173558-ad29539cd2e9
@@ -10,7 +10,7 @@ require (
 	github.com/jackc/pgtype v1.14.0
 	github.com/jackc/pgx/v4 v4.18.3
 	github.com/pborman/getopt v0.0.0-20190409184431-ee0cd42419d3
-	github.com/sirupsen/logrus v1.7.0
+	github.com/sirupsen/logrus v1.9.4
 	github.com/spf13/viper v1.19.0
 	github.com/theckman/httpforwarded v0.4.0
 )
@@ -38,10 +38,10 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
-	golang.org/x/crypto v0.35.0 // indirect
+	golang.org/x/crypto v0.52.0 // indirect
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
-	golang.org/x/sys v0.30.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

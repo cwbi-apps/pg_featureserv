@@ -10,7 +10,7 @@
 ##      IMAGE_TAG - The tag to be applied to the container
 
 APPVERSION ?= latest
-GOVERSION ?= 1.24.1
+GOVERSION ?= 1.26.3
 PROGRAM ?= pg_featureserv
 CONTAINER ?= usace/$(PROGRAM)
 DATE ?= $(shell date +%Y%m%d)
@@ -59,7 +59,7 @@ $(PROGRAM): $(GOFILES)
 
 bin-for-docker: $(GOFILES)  ##     Build a local binary using APPVERSION parameter or CI as default (to be used in docker image)
 # to be used in docker the built binary needs the CGO_ENABLED=0 option
-	CGO_ENABLED=0 go build -v -ldflags "-s -w -X github.com/CrunchyData/pg_featureserv/conf.setVersion=$(APPVERSION)"
+	CGO_ENABLED=0 GOOS=linux GOARCH=$(TARGETARCH) go build -v -ldflags "-s -w -X github.com/CrunchyData/pg_featureserv/conf.setVersion=$(APPVERSION)"
 
 build-in-docker: $(GOFILES)   ##    Build a local binary based of a golang base docker image without the need of a local go environment
 	docker run --rm -v "$(PWD)":/usr/src/myapp:z -w /usr/src/myapp golang:$(GOVERSION) make APPVERSION=$(APPVERSION) $(PROGRAM)

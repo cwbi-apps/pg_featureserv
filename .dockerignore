@@ -4,6 +4,7 @@
 !go.mod
 !go.sum
 !*.go
+!pg_featureserv
 !cql
 !assets
 !internal
