@@ -24,10 +24,8 @@ services:
         GOLANG_VERSION: "1.26.4"
         TARGETARCH: "amd64"
         PLATFORM: "amd64"
-        # BASE_REGISTRY: "registry.access.redhat.com"
-        # BASE_IMAGE: "ubi8-micro"
-        BASE_REGISTRY: "docker.io/chainguard"
-        BASE_IMAGE: "wolfi-base:latest"
+        BASE_REGISTRY: "registry.access.redhat.com"
+        BASE_IMAGE: "ubi10-micro"
         VERSION: "dev"
     image: pg_featureserv:dev-amd64
     platform: linux/amd64
