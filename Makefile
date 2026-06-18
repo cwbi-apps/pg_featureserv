@@ -14,10 +14,8 @@ GOVERSION ?= 1.26.4
 PROGRAM ?= pg_featureserv
 CONTAINER ?= usace/$(PROGRAM)
 DATE ?= $(shell date +%Y%m%d)
-# BASE_REGISTRY ?= registry.access.redhat.com
-# BASE_IMAGE ?= ubi8-micro
-BASE_REGISTRY ?= docker.io/chainguard
-BASE_IMAGE ?= wolfi-base:latest
+BASE_REGISTRY ?= registry.access.redhat.com
+BASE_IMAGE ?= ubi10-micro
 SYSTEMARCH = $(shell uname -m)
 
 ifeq ($(SYSTEMARCH), x86_64)
