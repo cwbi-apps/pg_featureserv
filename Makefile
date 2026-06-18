@@ -10,12 +10,14 @@
 ##      IMAGE_TAG - The tag to be applied to the container
 
 APPVERSION ?= latest
-GOVERSION ?= 1.26.3
+GOVERSION ?= 1.26.4
 PROGRAM ?= pg_featureserv
 CONTAINER ?= usace/$(PROGRAM)
 DATE ?= $(shell date +%Y%m%d)
-BASE_REGISTRY ?= registry.access.redhat.com
-BASE_IMAGE ?= ubi8-micro
+# BASE_REGISTRY ?= registry.access.redhat.com
+# BASE_IMAGE ?= ubi8-micro
+BASE_REGISTRY ?= docker.io/chainguard
+BASE_IMAGE ?= wolfi-base:latest
 SYSTEMARCH = $(shell uname -m)
 
 ifeq ($(SYSTEMARCH), x86_64)

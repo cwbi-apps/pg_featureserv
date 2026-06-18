@@ -1,6 +1,6 @@
 module github.com/CrunchyData/pg_featureserv
 
-go 1.26.3
+go 1.26.4
 
 require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220209173558-ad29539cd2e9
