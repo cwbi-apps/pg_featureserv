@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
       target: multi-stage
       args:
-        GOLANG_VERSION: "1.26.4"
+        GOLANG_VERSION: "1.26.6"
         TARGETARCH: "amd64"
         PLATFORM: "amd64"
         BASE_REGISTRY: "registry.access.redhat.com"
